@@ -1,13 +1,13 @@
 import numpy as np
 import torch
-import model
-import dataset
+import connect4._model as model
+import connect4._dataset as dataset
 
 with torch.no_grad():
-    nn = model.model()
-    nn.load_state_dict(torch.load('model.ckpt')['model_state_dict'])
-    nn.eval()
-    y_pred = np.array(nn(dataset.X_test))
+    my_model = model.model()
+    my_model.load_state_dict(torch.load('model.ckpt')['model_state_dict'])
+    my_model.eval()
+    y_pred = np.array(my_model(dataset.X_test))
     rounded = np.where(y_pred == np.max(y_pred, axis=1).reshape(-1, 1), 1, 0)
 
     accuracy = np.all((rounded == np.array(dataset.y_test)), axis=1).mean()
