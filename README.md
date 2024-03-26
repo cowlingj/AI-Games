@@ -13,3 +13,7 @@ Evaluate a hand using machine vision
 ## Rock Paper Scissors [Coming Soon]
 
 Play rock paper scissors using machine vision
+
+## Blackjack
+
+Count cards using an LSTM model
