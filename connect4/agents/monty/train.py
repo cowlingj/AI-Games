@@ -48,11 +48,9 @@ def play_from_move(col: int, state: np.ndarray) -> float:
     return 1 - np.sum(state) # the previous player to move just won
 
 # total simulated games = n_epocs * batch_size * simulations_per_col
-n_epochs = 1000
-
 def train(offset, n_epochs, my_model, loss_fn, optimizer):
-    batch_size = 10
-    simulations_per_col=1000
+    batch_size = 1000
+    simulations_per_col=10
 
     for epoch in range(n_epochs):
 
@@ -85,6 +83,7 @@ def train(offset, n_epochs, my_model, loss_fn, optimizer):
             for _ in range(simulations_per_col):
                 for col in range(len(y_preds[i])):
                     y[col] += play_from_move(col, np.copy(states[i]))
+            # print(y_preds[i], y / simulations_per_col)
             ybatch.append(y / simulations_per_col)
         ybatch = np.array(ybatch)
 
@@ -98,8 +97,8 @@ def train(offset, n_epochs, my_model, loss_fn, optimizer):
 if __name__ == '__main__':
     # device = torch.device("cuda" if torch.cuda.is_available()  else "cpu")
 
-    epochs_per_process = 100
-    num_processes = 16
+    epochs_per_process = 50
+    num_processes = 1
     checkpoint = input("filename: (monty.ckpt)").strip()
     if len(checkpoint) == 0:
         checkpoint = "monty.ckpt"
@@ -108,7 +107,7 @@ if __name__ == '__main__':
     my_model.share_memory()
 
     loss_fn = nn.BCELoss()
-    optimizer = optim.Adam(my_model.parameters())
+    optimizer = optim.Adam(my_model.parameters(), lr=0.01)
 
     processes = []
     for rank in range(num_processes):
