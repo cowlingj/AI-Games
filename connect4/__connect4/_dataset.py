@@ -1,6 +1,6 @@
 import numpy as np
 import torch
-import connect4._game as game
+import __connect4._game as game
 
 _rng = np.random.default_rng(seed=1234)
 

@@ -1,7 +1,7 @@
 import numpy as np
 import torch
-import connect4._model as model
-import connect4._dataset as dataset
+import __connect4._model as model
+import __connect4._dataset as dataset
 
 with torch.no_grad():
     my_model = model.model()

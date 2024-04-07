@@ -1,6 +1,6 @@
 import numpy as np
 import random
-import connect4._game as game
+import __connect4._game as game
 import signal
 import sys
 

@@ -3,8 +3,8 @@ import time
 import numpy as np
 import random
 import torch
-import connect4._game as game
-import connect4._model as model
+import __connect4._game as game
+import __connect4._model as model
 import signal
 import sys
 
@@ -53,12 +53,10 @@ while True:
                 state[row, col] = 1 if move % 2 == 0 else -1
             else:
                 y_pred = np.array(my_model(torch.tensor(state.reshape(1, -1), dtype=torch.float32)))
-
-                debug_print((state[0] == 0), ((state[0] == 0) * y_pred)[0])
-                col = np.argmax((state[0] == 0) * y_pred)
-                if np.sum((state[0] == 0) * y_pred) == 0:
-                    debug_print("NN doesn't have any suggestions, picking at random")
-                    col = random.choice(np.nonzero(state[0] == 0)[0])
+                debug_print(y_pred)
+                legal_pred = (state[0] == 0) * y_pred
+                cols = np.nonzero(legal_pred == np.max(legal_pred))
+                col = random.choice(cols)
                 debug_print(f"NN wants to play {col + 1}")
                 if col < 0 or col >= state.shape[1] or state[0, col] != 0:
                     raise ValueError("Illegal Move")

@@ -59,26 +59,26 @@ Region.WATER_NW_GR = Region(None, None, (10, 70), (10, 20))
 Region.WATER_GR_IC = Region(None, None, (10, 110), (10, 10))
 Region.WATER_ON_GR = Region(None, None, (20, 60), (10, 30))
 Region.WATER_QB_GR = Region(None, None, (30, 80), (10, 10))
-Region.WATER_IC_SC = Region(None, None, (), ())
-Region.WATER_IC_GB = Region(None, None, (), ())
-Region.WATER_GB_SC = Region(None, None, (), ())
-Region.WATER_GB_WE = Region(None, None, (), ())
-Region.WATER_GB_NE = Region(None, None, (), ())
-Region.WATER_SC_NE = Region(None, None, (), ())
-Region.WATER_BR_NF = Region(None, None, (), ())
-Region.WATER_SE_NF = Region(None, None, (), ())
-Region.WATER_SE_EG = Region(None, None, (), ())
-Region.WATER_ME_EF = Region(None, None, (), ())
-Region.WATER_EF_MD = Region(None, None, (), ())
-Region.WATER_SF_MD = Region(None, None, (), ())
-Region.WATER_KA_JA = Region(None, None, (), ())
-Region.WATER_MG_JA = Region(None, None, (), ())
-Region.WATER_SM_IN = Region(None, None, (), ())
-Region.WATER_IN_NG = Region(None, None, (), ())
-Region.WATER_IN_WA = Region(None, None, (), ())
-Region.WATER_NG_WA = Region(None, None, (), ())
-Region.WATER_NG_EA = Region(None, None, (), ())
-Region.WATER_KA = Region(None, None, (), (10, 10))
+Region.WATER_IC_SC = Region(None, None, (10, 130), (10, 20))
+Region.WATER_IC_GB = Region(None, None, (20, 120), (10, 10))
+Region.WATER_GB_SC = Region(None, None, (30, 140), (10, 10))
+Region.WATER_GB_WE = Region(None, None, (40, 120), (10, 10))
+Region.WATER_GB_NE = Region(None, None, (40, 130), (10, 10))
+Region.WATER_SC_NE = Region(None, None, (40, 150), (10, 10))
+Region.WATER_BR_NF = Region(None, None, (100, 90), (10, 20))
+Region.WATER_SE_NF = Region(None, None, (80, 80), (10, 10))
+Region.WATER_SE_EG = Region(None, None, (80, 100), (10, 10))
+Region.WATER_ME_EF = Region(None, None, (90, 120), (10, 10))
+Region.WATER_EF_MD = Region(None, None, (130, 120), (20, 10))
+Region.WATER_SF_MD = Region(None, None, (150, 160), (10, 10))
+Region.WATER_KA_JA = Region(None, None, (40, 260), (10, 10))
+Region.WATER_MG_JA = Region(None, None, (40, 250), (10, 10))
+Region.WATER_SM_IN = Region(None, None, (90, 220), (20, 10))
+Region.WATER_IN_NG = Region(None, None, (110, 230), (10, 10))
+Region.WATER_IN_WA = Region(None, None, (120, 220), (10, 10))
+Region.WATER_NG_WA = Region(None, None, (120, 240), (10, 10))
+Region.WATER_NG_EA = Region(None, None, (120, 250), (10, 10))
+Region.WATER_KA = Region(None, None, (10, 270), (10, 10))
 
 water_routes = [
     Region.WATER_AL,
@@ -115,5 +115,12 @@ map: dict[Region, list[Region]] = {
 }
 
 continents = {
+    "NA": [
 
+    ],
+    "SA": [],
+    "EU": [],
+    "AF": [],
+    "AS": [],
+    "OC": []
 }

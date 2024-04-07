@@ -1,7 +1,7 @@
 import numpy as np
 import torch
-import connect4._game as game
-import connect4._model as model
+import __connect4._game as game
+import __connect4._model as model
 import signal
 import sys
 

@@ -1,5 +1,5 @@
 import torch.nn as nn
-import connect4._dataset as dataset
+import __connect4._dataset as dataset
 
 _hidden_size = 1024
 _hidden_count = 6

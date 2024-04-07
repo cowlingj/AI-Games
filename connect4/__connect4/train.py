@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import connect4._dataset as dataset
-import connect4._model as model
+import __connect4._dataset as dataset
+import __connect4._model as model
 
 my_model = model.model()
 
